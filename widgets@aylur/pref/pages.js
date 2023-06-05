@@ -364,7 +364,7 @@ class MediaPlayerPage extends SubPage{
     _cacheSize(){
         let dir = Gio.File.new_for_path(MEDIA_CACHE);
         if(!GLib.file_test(MEDIA_CACHE, GLib.FileTest.EXISTS))
-            dir.make_directory(null);
+            dir.make_directory_with_parents(null);
 
         let info = dir.query_info('standard::*', Gio.FileQueryInfoFlags.NONE, null);
         this.clearRow.set_subtitle(`${info.get_size()} bytes`);
