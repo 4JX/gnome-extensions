@@ -341,7 +341,7 @@ var Extension = class Extension {
 
         //notifications
         if(this._settings.get_boolean('date-menu-hide-notifications'))
-            this._menuBox.remove_child(this._notifications);
+            this._notifications.hide();
     }
 
     _reset(){
